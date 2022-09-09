@@ -1,7 +1,14 @@
+@media only screen and (max-width: 800px) {
+  .titleInfo {
+    display: none !important;
+  }
+}
+
 :root {
   font-family: "Raleway";
   font-weight: 300;
   font-size: 16px;
+  overflow: hidden;
 }
 
 p {
@@ -15,7 +22,7 @@ h1 {
 .container {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 5fr;
   grid-template-areas:
     " . header . "
@@ -23,7 +30,30 @@ h1 {
 }
 
 .cell {
-  background-color: aqua;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  font-weight: 100;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.cell:nth-child(3n) {
+  border-right: none;
+}
+.cell:nth-child(-n + 3) {
+  border-top: none;
+}
+.cell:nth-child(3n-2) {
+  border-left: none;
+}
+.cell:nth-child(n + 7) {
+  border-bottom: none;
+}
+.cell:hover {
+  background-color: rgba(233, 233, 233, 0.301);
 }
 
 .header {
@@ -41,12 +71,13 @@ h1 {
 .gameArea {
   grid-area: gameArea;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 4fr 2fr;
   grid-template-rows: 1fr 8fr 1fr;
   grid-template-areas:
     "playerX . playerO"
-    ". gameboard ."
+    "gameboard gameboard gameboard"
     ". . .";
+  gap: 3rem;
 }
 
 .playerX {
@@ -62,8 +93,28 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .gameboard {
   grid-area: gameboard;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  aspect-ratio: 1/1;
+}
+
+.selected {
+  border: 1px solid black;
+  margin: 1rem;
+}
+
+.playerX:hover,
+.playerO:hover {
+  border: 1px dashed black;
+  margin: 1rem;
+  background-color: rgba(233, 233, 233, 0.301);
 }
