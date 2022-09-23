@@ -1,120 +1,89 @@
-@media only screen and (max-width: 800px) {
-  .titleInfo {
-    display: none !important;
-  }
-}
-
 :root {
-  font-family: "Raleway";
-  font-weight: 300;
-  font-size: 16px;
-  overflow: hidden;
-}
-
-p {
+  font-family: monospace;
   font-size: 1rem;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
 .container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 5fr;
-  grid-template-areas:
-    " . header . "
-    " . gameArea . ";
-}
-
-.cell {
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 8rem;
-  font-weight: 100;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-.cell:nth-child(3n) {
-  border-right: none;
-}
-.cell:nth-child(-n + 3) {
-  border-top: none;
-}
-.cell:nth-child(3n-2) {
-  border-left: none;
-}
-.cell:nth-child(n + 7) {
-  border-bottom: none;
-}
-.cell:hover {
-  background-color: rgba(233, 233, 233, 0.301);
-}
-
-.header {
-  grid-area: header;
   display: flex;
   flex-flow: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
   text-align: center;
+  gap: 2rem;
 }
 
-.gameArea {
-  grid-area: gameArea;
-  display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
-  grid-template-rows: 1fr 8fr 1fr;
-  grid-template-areas:
-    "playerX . playerO"
-    "gameboard gameboard gameboard"
-    ". . .";
-  gap: 3rem;
-}
-
-.playerX {
-  grid-area: playerX;
-}
-
-.playerO {
-  grid-area: playerO;
-}
-
-.playerX,
-.playerO {
+.players {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  justify-content: space-around;
+  width: min(600px, 90%);
+  font-size: 1.5rem;
 }
 
 .gameboard {
-  grid-area: gameboard;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1 !important;
+  width: min(600px, 90%);
 }
 
-.selected {
-  border: 1px solid black;
-  margin: 1rem;
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  font-family: Monoton, monospace, "Times New Roman", Times, serif;
+  font-size: 5rem;
 }
 
-.playerX:hover,
-.playerO:hover {
-  border: 1px dashed black;
-  margin: 1rem;
-  background-color: rgba(233, 233, 233, 0.301);
+.cell:hover {
+  background-color: rgba(199, 199, 199, 0.274);
+}
+
+.c1,
+.c2,
+.c3 {
+  border-top: none;
+}
+
+.c1,
+.c4,
+.c7 {
+  border-left: none;
+}
+
+.c7,
+.c8,
+.c9 {
+  border-bottom: none;
+}
+
+.c3,
+.c6,
+.c9 {
+  border-right: none;
+}
+.header {
+  margin-top: 1rem;
+  width: min(800px, 90%);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.titleInfo {
+  font-size: 1rem;
+}
+
+.live {
+  background-color: rgb(60, 255, 0);
+}
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }

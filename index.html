@@ -7,7 +7,12 @@
     <title>Tic-Tac-Toe</title>
     <!-- FONT -->
     <link
-      href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600"
+      href="//fonts.googleapis.com/css?family=Nabla"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Monoton"
       rel="stylesheet"
       type="text/css"
     />
@@ -28,20 +33,24 @@
           symbols in a row.
         </p>
       </section>
-      <section class="gameArea">
-        <div class="playerX">Player X</div>
-        <div class="playerO">Player O</div>
-        <div class="gameboard">
-          <div class="cell">X</div>
-          <div class="cell">O</div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div>
+      <div class="players">
+        <div class="live" id="playerX">Player X</div>
+        <div class="" id="playerO">Player O</div>
+      </div>
+
+      <div class="gameboard">
+        <div class="cell c1 disable-select" data-key="0"></div>
+        <div class="cell c2 disable-select" data-key="1"></div>
+        <div class="cell c3 disable-select" data-key="2"></div>
+        <div class="cell c4 disable-select" data-key="3"></div>
+        <div class="cell c5 disable-select" data-key="4"></div>
+        <div class="cell c6 disable-select" data-key="5"></div>
+        <div class="cell c7 disable-select" data-key="6"></div>
+        <div class="cell c8 disable-select" data-key="7"></div>
+        <div class="cell c9 disable-select" data-key="8"></div>
+      </div>
+      <section class="footer">
+        <div class="footerInfo"></div>
       </section>
     </div>
   </body>
